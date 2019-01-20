@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const magnetController = require('./src/controllers/magnet')
 
 app.use(bodyParser.json())
+bodyParser.urlencoded({ extended: false })
+
 app.post('/add', magnetController.add)
 app.post('/done', magnetController.callback)
 
